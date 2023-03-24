@@ -5,9 +5,9 @@ Welcome to our Selenium Python test repository! This repository contains a colle
 ## Installation
 To get started, you'll need to have Python 3 and the following Python packages installed:
 
-1)selenium
+1) selenium
 
-2)pytest
+2) pytest
 
 You can install these packages using pip:
 
