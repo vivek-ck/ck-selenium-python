@@ -129,4 +129,15 @@ dmypy.json
 .pyre/
 
 # Virtual environments
-selenium_env/
+venv/
+
+# vscode
+.DS_store
+.vscode/
+
+# reports
+allure_results/
+assets/
+latest_logs
+dashboard.html
+allure_result/
