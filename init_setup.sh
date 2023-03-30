@@ -1,8 +1,8 @@
 # Create a Python virtual environment for Selenium
-python3 -m venv __dependencies__
+python3 -m venv venv
 
 # Activate the virtual environment
-source __dependencies__/bin/activate
+source venv/bin/activate
 
 # Install SeleniumBase package within the virtual environment
 pip install seleniumbase allure-behave
