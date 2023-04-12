@@ -7,7 +7,7 @@ def step_impl(context):
 
 @when("the user logs in with credentials")
 def step_impl(context):
-    KeywordManager.salesforce_login_page().login(context.sb, "saikat@cloudkaptan.com", "Welcome123")
+    KeywordManager.salesforce_login_page().login(context.sb, "saikat@cloudkaptan.com", "Welcome1234")
 
 @when('the user navigates to the Leads page')
 def step_impl(context):
