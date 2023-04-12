@@ -30,9 +30,9 @@ Welcome to our *Selenium Python Test Framework*! This repository contains a coll
 
 This framwork provides the following features:
 
-1) [Seleniumbase](https://seleniumbase.io/)
+1) [Seleniumbase](https://seleniumbase.io/): It is highly recommended to go through this documentation.
 
-4) UI testing
+2) UI testing
 
 3) API Testing
 
