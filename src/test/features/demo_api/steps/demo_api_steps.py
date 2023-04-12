@@ -25,7 +25,7 @@ def step_impl(context):
     global api_endpoint, payload
     context.response = requests.post(api_endpoint, json=payload)
 
-@given(u'I give the payload from file {filename:S}')
+@given('I use the payload from file {filename:S}')
 def step_impl(context, filename):
     global payload
     with open("resources/payload_json/" + filename) as f:

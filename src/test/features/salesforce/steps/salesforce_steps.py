@@ -5,9 +5,9 @@ from src.test.page_object.keyword_manager import KeywordManager
 def step_impl(context):
     KeywordManager.salesforce_login_page().open_page(context.sb)
 
-@when("the user logs in with credentials")
-def step_impl(context):
-    KeywordManager.salesforce_login_page().login(context.sb, "saikat@cloudkaptan.com", "Welcome1234")
+@when("the user logs in with username {username:S} and password {password:S}")
+def step_impl(context, username, password):
+    KeywordManager.salesforce_login_page().login(context.sb, username, password)
 
 @when('the user navigates to the Leads page')
 def step_impl(context):
