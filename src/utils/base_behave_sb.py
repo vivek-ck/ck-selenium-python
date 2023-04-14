@@ -1,13 +1,16 @@
 from seleniumbase.behave.behave_sb import *
 
 
-def before_scenario(context, scenario):
-    sb_config.behave_context = context
-    sb_config.behave_scenario = scenario
-    sb_config.behave_line_num = scenario.line
-    sb_config.behave_step_count = 0
-    context.sb.setUp()
-    #context.sb.set_window_size(1280, 720)
+'''
+This is an intermediate python file which imports all the features from "seleniumbase.behave.behave_sb".
+The purpose of this file is to make small modifications to the methods present in "behave_sb" according 
+to the user's need without changin the SeleniumBase package.
+
+Feel free to override any methods as needed...
+
+Happy Testing!!!
+'''
+
 
 def after_step(context, step):
     sb_config.behave_step = step

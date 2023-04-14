@@ -1,5 +1,9 @@
 Feature: Testing JSONPlaceholder API
 
+  # Background:
+  #   Given I have the BaseUrl ""
+  #   And I have the PayLoad from file ""
+
   Scenario: Retrieve a list of posts
     Given I have the API endpoint "https://jsonplaceholder.typicode.com/posts"
     When I send a GET request
@@ -14,7 +18,6 @@ Feature: Testing JSONPlaceholder API
 
   Scenario: Create a new post
     Given I have the API endpoint "https://jsonplaceholder.typicode.com/posts"
-    And I use the payload from file test_payload.json
-    When I send a POST request
+    When I send a POST request with the payload file "test_payload.json"
     Then the response status code should be 201
     And the response body should contain the newly created post

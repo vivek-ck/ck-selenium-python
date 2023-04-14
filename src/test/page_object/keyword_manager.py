@@ -1,12 +1,16 @@
-from src.test.page_object.salesforce.login_page import SalesforceLoginPage
-from src.test.page_object.salesforce.home_page import SalesforceHomePage
-from src.test.page_object.salesforce.leads_page import SalesforceLeadsPage
+from .salesforce._login_page import LoginPage
+from .salesforce._home_page import HomePage
+from .salesforce._leads_page import LeadsPage
+from src.utils import BaseKeywordManager
 
-class KeywordManager():
-    def salesforce_login_page():
-        return SalesforceLoginPage
-    def salesforce_home_page():
-        return SalesforceHomePage
-    def salesforce_leads_page():
-        return SalesforceLeadsPage
-    
+class SalesForce(BaseKeywordManager):
+
+    def __init__(self) -> None:
+        super().__init__("salesforce")
+
+    def login_page():
+        return LoginPage()
+    def home_page():
+        return HomePage()
+    def leads_page():
+        return LeadsPage()
