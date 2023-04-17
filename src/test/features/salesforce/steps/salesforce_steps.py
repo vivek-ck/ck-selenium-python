@@ -4,6 +4,8 @@ from src.test.page_object import SalesForce
 @given("the Salesforce login page is opened")
 def step_impl(context):
     SalesForce.login_page().open_page(context.sb)
+    # for entry in context.sb.driver.get_log('performance'):
+    #     print(entry)
 
 @when("the user logs in with username {username:S} and password {password:S}")
 def step_impl(context, username, password):

@@ -13,3 +13,7 @@ Feature: Salesforce user must be able to login to the application and create Lea
       # | Ms.        | test0007 | company2 |
       # | Mrs.       | test0008 | company1 |
       # | Dr.        | test0009 | company2 |
+
+
+      #behave -f allure_behave.formatter:AllureFormatter -o reports  **/salesforce/ --no-capture -D headless;
+      #allure serve reports

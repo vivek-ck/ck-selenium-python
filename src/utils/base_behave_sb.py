@@ -1,4 +1,7 @@
+from exceptiongroup import catch
 from seleniumbase.behave.behave_sb import *
+from allure_commons._allure import attach
+from allure_commons.types import AttachmentType
 
 
 '''
@@ -11,12 +14,19 @@ Feel free to override any methods as needed...
 Happy Testing!!!
 '''
 
-
 def after_step(context, step):
     sb_config.behave_step = step
-    if step.status == "failed":
-        number = sb_config.behave_step_count
-        print(">>> STEP FAILED:  (#%s) %s" % (number, step.name))
-        print("Class / Feature: ", sb_config.behave_feature.name)
-        print("Test / Scenario: ", sb_config.behave_scenario.name)
-    context.sb.save_screenshot_to_logs()
+    status = "FAILED"
+    if step.status == "passed":
+        status = "PASSED"
+
+    number = sb_config.behave_step_count
+    print(f">>> STEP {status}:  (#%s) %s" % (number, step.name))
+    print("Class / Feature: ", sb_config.behave_feature.name)
+    print("Test / Scenario: ", sb_config.behave_scenario.name)
+    try:
+        context.sb.wait_for_ready_state_complete(5)
+        attach(context.sb.driver.get_screenshot_as_png(), name="screenshot", attachment_type=AttachmentType.PNG)
+    except :
+        pass
+
